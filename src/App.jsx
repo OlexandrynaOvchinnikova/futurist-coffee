@@ -9,9 +9,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => (
     <Router>
-        <div className="bg-gray-100 min-h-screen"> {/* Додаємо фон до кореневого елемента */}
+        <div className="bg-gray-100 min-h-screen">
             <Navbar />
-            {/*<MainText />*/}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/menu" element={<Menu />} />

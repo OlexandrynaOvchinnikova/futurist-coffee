@@ -1,10 +1,65 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faLeaf, faCookieBite } from '@fortawesome/free-solid-svg-icons';
+
+const menuSections = {
+    coffee: [
+        { name: 'Еспресо', description: 'Насичений і міцний кавовий напій.', price: '50₴', icon: faCoffee },
+        { name: 'Капучино', description: 'Класичний напій з ніжною молочною пінкою.', price: '70₴', icon: faCoffee },
+        { name: 'Лате', description: 'М\'який кавовий напій з молоком.', price: '80₴', icon: faCoffee },
+        { name: 'Американо', description: 'Легка кава з додаванням води.', price: '60₴', icon: faCoffee },
+        { name: 'Флет Вайт', description: 'Насичена кава з молоком.', price: '85₴', icon: faCoffee },
+    ],
+    tea: [
+        { name: 'Чорний чай', description: 'Класичний чорний чай з багатим смаком.', price: '40₴', icon: faLeaf },
+        { name: 'Зелений чай', description: 'Свіжий та освіжаючий напій.', price: '45₴', icon: faLeaf },
+        { name: 'Трав\'яний чай', description: 'Заспокійливий чай з травами.', price: '50₴', icon: faLeaf },
+        { name: 'Чай з лимоном', description: 'Чай з нотками цитрусу.', price: '50₴', icon: faLeaf },
+    ],
+    pastries: [
+        { name: 'Круасан', description: 'Ніжний хрусткий круасан.', price: '50₴', icon: faCookieBite },
+        { name: 'Маффін', description: 'Солодкий маффін з шоколадом або ягодами.', price: '45₴', icon: faCookieBite },
+        { name: 'Чізкейк', description: 'Класичний кремовий десерт.', price: '70₴', icon: faCookieBite },
+        { name: 'Тірамісу', description: 'Легендарний італійський десерт.', price: '80₴', icon: faCookieBite },
+    ],
+};
 
 const Menu = () => {
     return (
-        <div className="p-8">
-            <h2 className="text-4xl font-bold">Меню</h2>
-            <p>Ось наші смачні пропозиції!</p>
+        <div className="p-8 bg-gradient-to-b from-brown-900 via-purple-800 to-pink-700 min-h-screen text-white">
+            <h2 className="text-4xl font-bold mb-6 text-center">Меню</h2>
+            {Object.entries(menuSections).map(([section, items]) => (
+                <div key={section} className="mb-8">
+                    <h3
+                        className={`text-3xl font-semibold mb-4 border-b-2 pb-2 ${
+                            section === 'coffee'
+                                ? 'text-brown-300 border-brown-500'
+                                : section === 'tea'
+                                    ? 'text-green-300 border-green-500'
+                                    : 'text-pink-300 border-pink-500'
+                        }`}
+                    >
+                        {section === 'coffee' ? 'Кава' : section === 'tea' ? 'Чай' : 'Кондитерські вироби'}
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {items.map((item, index) => (
+                            <div
+                                key={index}
+                                className="p-4 border border-pink-300 bg-purple-700 rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl transition duration-300"
+                            >
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="text-4xl">
+                                        <FontAwesomeIcon icon={item.icon} />
+                                    </div>
+                                    <h4 className="text-2xl font-semibold">{item.name}</h4>
+                                </div>
+                                <p className="text-gray-200">{item.description}</p>
+                                <p className="text-lg font-bold mt-2">{item.price}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
         </div>
     );
 };
