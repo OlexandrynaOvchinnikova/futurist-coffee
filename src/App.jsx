@@ -3,14 +3,15 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
+import ScrollToTop from './components/ScrollToTop';
 import Contact from './pages/Contact';
-import MainText from "./components/MainText";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from "./components/Footer";
 
 const App = () => (
     <Router>
         <div className="bg-gray-100 min-h-screen">
+            <ScrollToTop />
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />

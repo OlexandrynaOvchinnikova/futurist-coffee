@@ -3,12 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import manycoffee from '../imgs/many-coffee.png';
+import coffee from '../imgs/top-coffee.png';
+import tech4 from '../imgs/tech-4.png';
+import tech3 from '../imgs/tech-3.png';
 
 const galleryImages = [
     { id: 1, title: 'Кава з магією', imageUrl: manycoffee, description: 'Кава, яка надихає!' },
-    { id: 2, title: 'Чайний рай', imageUrl: 'https://via.placeholder.com/300', description: 'Свіжість у кожній чашці.' },
-    { id: 3, title: 'Солодкі миті', imageUrl: 'https://via.placeholder.com/300', description: 'Чудові десерти для вас.' },
-    { id: 4, title: 'Нічна кава', imageUrl: manycoffee, description: 'Тільки найкраща нічна кава.' },
+    { id: 2, title: 'Чайний рай', imageUrl: tech3, description: 'Свіжість у кожній чашці.' },
+    { id: 3, title: 'Солодкі миті', imageUrl: tech4, description: 'Чудові десерти для вас.' },
+    { id: 4, title: 'Нічна кава', imageUrl: coffee, description: 'Тільки найкраща нічна кава.' },
 
 ];
 
