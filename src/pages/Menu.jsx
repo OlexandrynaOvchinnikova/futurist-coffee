@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faLeaf, faCookieBite } from '@fortawesome/free-solid-svg-icons';
+import { faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const menuSections = {
     coffee: [
@@ -26,7 +28,7 @@ const menuSections = {
 
 const Menu = () => {
     return (
-        <div className="p-8 bg-gradient-to-b from-brown-900 via-purple-800 to-pink-700 min-h-screen text-white">
+        <div className="p-8 bg-gradient-to-b from-gray-900 via-purple-800 to-pink-700 min-h-screen text-white">
             <h2 className="text-4xl font-bold mb-6 text-center">Меню</h2>
             {Object.entries(menuSections).map(([section, items]) => (
                 <div key={section} className="mb-8">
@@ -49,7 +51,7 @@ const Menu = () => {
                             >
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="text-4xl">
-                                        <FontAwesomeIcon icon={item.icon} />
+                                        <FontAwesomeIcon icon={item.icon}/>
                                     </div>
                                     <h4 className="text-2xl font-semibold">{item.name}</h4>
                                 </div>
@@ -60,6 +62,20 @@ const Menu = () => {
                     </div>
                 </div>
             ))}
+            {/* Перехід до галереї */}
+            <div className="mt-12 text-center py-8">
+                <p className="text-2xl font-semibold text-white mb-4">Бажаєте побачити більше?</p>
+                <p className="text-xl font-bold text-white mb-6">Завітайте у нашу галерею і насолоджуйтеся найкращими
+                    роботами!</p>
+                <Link
+                    to="/gallery"
+                    className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-lg hover:bg-gradient-to-l hover:scale-105 transition-all duration-300"
+                >
+                    <FontAwesomeIcon icon={faWandMagicSparkles} className="mr-2 text-lg"/>
+                    Перейти до галереї
+                </Link>
+            </div>
+
         </div>
     );
 };
