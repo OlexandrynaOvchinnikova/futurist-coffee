@@ -10,7 +10,7 @@ const MainText = ({ onMoreClick }) => {
         <div
             className="h-[100vh] md:h-[70vh] lg:h-[90vh] bg-gradient-to-r from-purple-800 via-gray-900 to-pink-900 text-white flex flex-col justify-center items-center text-center px-6">
             <h1 className="text-6xl font-bold tracking-wide drop-shadow-md animate-pulse flex items-center gap-4">
-                Відчуй майбутнє з кавою
+                Відчуй майбутнє з кавоuuuu
                 <FontAwesomeIcon icon={faCoffee} className="text-pink-500 w-12 h-12" />
             </h1>
             <p className="mt-4 text-2xl text-purple-300 max-w-2xl leading-relaxed tracking-wider bg-gradient-to-r from-pink-500 via-purple-700 to-yellow-400 bg-clip-text text-transparent animate-text shadow-lg">
